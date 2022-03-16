@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.text-big.center {
+  text-align: center;
+  color: red;
+}
+</style>
+
+<style>
+.popup{
+	display: none;
+	width: 350px;
+	height: 200px;
+	background-color: yellow;
+}
+
+.popup.show{
+	display: block;
+}
+</style>
+</head>
+<body>
+<div class="popup">popup</div>
+
+<button id="togglePopup">toggle popup</button>
+<!-- <button id="closePopup">close popup</button> -->
+
+
+<script>
+// const BUTTON =document.getElementsByTagName('button')[0];
+// const POPUP = document.getElementsByClassName('popup')[0];
+
+const toggleButton= document.querySelector("#togglePopup");
+//const closeButton= document.querySelector("#closePopup");
+const POPUP=document.querySelector(".popup");
+
+
+
+function TogglePopup(){
+	//POPUP.style.display="block";
+	if (!POPUP.classList.contains('show')) {
+		POPUP.classList.add("show");
+	}
+
+	else if (POPUP.classList.contains('show')) {
+		POPUP.classList.remove("show");
+	 }
+}
+
+
+// function ClosePopup(){
+// 	//POPUP.style.display="none";
+// 	if (POPUP.classList.contains('show')) {
+// 		POPUP.classList.remove("show");
+// 	}
+// }
+
+toggleButton.addEventListener('click',TogglePopup);
+//closeButton.addEventListener('click',ClosePopup);
+
+</script>
+
+
+</body>
+</html>
